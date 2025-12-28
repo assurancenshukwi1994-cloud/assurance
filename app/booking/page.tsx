@@ -3,76 +3,114 @@ import React from 'react';
 
 export default function BookingPage() {
   return (
-    <main className="min-h-screen bg-gray-50 pt-28 pb-20 px-4 sm:px-6">
-      <div className="max-w-4xl mx-auto">
+    <main className="min-h-screen bg-[#fafafa] pt-28 pb-20 px-4 sm:px-6">
+      <div className="max-w-6xl mx-auto">
         
-        {/* HEADER SECTION */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-6xl font-black text-gray-900 tracking-tighter uppercase mb-4">
-            Secure Your <span className="text-[#1f7a1f]">Session</span>
+        {/* TOP BRANDING */}
+        <div className="flex flex-col items-center mb-16 text-center">
+          <div className="flex items-center gap-2 mb-4 bg-white px-4 py-2 rounded-full shadow-sm border border-gray-100">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+            </span>
+            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-500">System Online • Jos, Plateau</span>
+          </div>
+          <h1 className="text-5xl md:text-7xl font-black text-gray-900 tracking-tighter uppercase leading-none">
+            RESERVE <span className="text-[#1f7a1f]">LARRY</span>
           </h1>
-          <div className="w-24 h-2 bg-[#c9a227] mx-auto mb-6"></div>
-          <p className="text-gray-500 font-medium max-w-lg mx-auto">
-            Fill out your details to get a quote, or use the direct payment button below to secure your slot instantly.
-          </p>
+          <p className="mt-4 text-gray-400 font-medium max-w-md text-sm uppercase tracking-widest">Premium Sanitation Concierge</p>
         </div>
 
-        <div className="bg-white rounded-[2.5rem] shadow-2xl overflow-hidden border border-gray-100 flex flex-col md:flex-row">
+        {/* MAIN CONTAINER */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
           
-          {/* LEFT SIDE: INFO & DIRECT PAYMENT */}
-          <div className="bg-[#1f7a1f] md:w-1/3 p-10 text-white flex flex-col justify-between">
-            <div>
-              <h3 className="text-2xl font-bold mb-4">Fast Track</h3>
-              <p className="text-xs text-green-100 mb-6 leading-relaxed">Already have a quote or want to pay a deposit now?</p>
+          {/* LEFT: THE ACTION PANEL (PAYMENT) */}
+          <div className="lg:col-span-5 bg-black rounded-[2.5rem] p-8 md:p-12 text-white flex flex-col justify-between shadow-2xl relative overflow-hidden">
+             {/* Decorative Background Element */}
+            <div className="absolute -bottom-10 -left-10 w-64 h-64 bg-[#1f7a1f] opacity-20 blur-[100px]"></div>
+            
+            <div className="relative z-10">
+              <h3 className="text-3xl font-black mb-2 italic tracking-tight">Express Checkout</h3>
+              <p className="text-gray-400 text-sm mb-10 leading-relaxed">Secure your date immediately without waiting for a callback. Best for standard residential services.</p>
               
-              {/* --- DIRECT PAYSTACK LINK --- */}
+              <div className="space-y-6 mb-12">
+                <div className="flex items-start gap-4 bg-white/5 p-4 rounded-2xl border border-white/10">
+                   <span className="text-2xl">⚡</span>
+                   <div>
+                     <p className="font-bold text-sm uppercase">Instant Priority</p>
+                     <p className="text-xs text-gray-500">Paid bookings move to the front of our schedule.</p>
+                   </div>
+                </div>
+                <div className="flex items-start gap-4 bg-white/5 p-4 rounded-2xl border border-white/10">
+                   <span className="text-2xl">🛡️</span>
+                   <div>
+                     <p className="font-bold text-sm uppercase">Secure Portal</p>
+                     <p className="text-xs text-gray-500">End-to-end encrypted payment via Paystack.</p>
+                   </div>
+                </div>
+              </div>
+
               <a 
                 href="https://paystack.shop/pay/qcg196ti0k" 
                 target="_blank" 
-                rel="noopener noreferrer"
-                className="inline-block w-full text-center bg-[#c9a227] hover:bg-yellow-500 text-black font-black py-4 rounded-xl transition-all shadow-lg mb-8 scale-105"
+                className="group relative flex items-center justify-center w-full bg-[#c9a227] hover:bg-white text-black font-black py-6 rounded-2xl transition-all shadow-[0_20px_50px_rgba(201,162,39,0.4)] overflow-hidden"
               >
-                💳 PAY ONLINE
+                <span className="relative z-10 tracking-[0.2em] text-sm">PROCEED TO PAYMENT</span>
+                <div className="absolute inset-0 bg-white translate-y-[101%] group-hover:translate-y-0 transition-transform duration-300"></div>
               </a>
-
-              <ul className="space-y-4 text-xs font-light opacity-80">
-                <li className="flex gap-3"><span>✓</span> Instant Confirmation</li>
-                <li className="flex gap-3"><span>✓</span> Secure Paystack Portal</li>
-              </ul>
             </div>
-            
-            <div className="mt-12">
-              <p className="text-[10px] text-green-200 uppercase tracking-widest mb-1">Support</p>
-              <p className="font-bold">0810 041 1907</p>
+
+            <div className="mt-12 relative z-10 pt-8 border-t border-white/10 flex items-center justify-between">
+               <div>
+                 <p className="text-[10px] text-gray-500 uppercase font-bold mb-1 tracking-widest">Direct Line</p>
+                 <p className="text-lg font-black tracking-tighter text-[#c9a227]">0810 041 1907</p>
+               </div>
+               <div className="text-right">
+                 <p className="text-[10px] text-gray-400 uppercase font-bold mb-1 tracking-widest">Rating</p>
+                 <p className="text-lg font-black tracking-tighter">5.0 ⭐⭐⭐⭐⭐</p>
+               </div>
             </div>
           </div>
 
-          {/* RIGHT SIDE: THE FORM */}
-          <div className="md:w-2/2 p-8 md:p-12 bg-white">
-            <h4 className="text-sm font-black uppercase tracking-widest text-gray-400 mb-6">Request a Quote</h4>
-            <form action="https://formspree.io/f/xvgzlowj" method="POST" className="space-y-5">
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <input type="text" name="name" required placeholder="Full Name" className="w-full bg-gray-50 rounded-xl p-4 outline-none focus:ring-2 focus:ring-[#1f7a1f]" />
-                <input type="email" name="email" required placeholder="Email" className="w-full bg-gray-50 rounded-xl p-4 outline-none focus:ring-2 focus:ring-[#1f7a1f]" />
+          {/* RIGHT: THE FORM PANEL */}
+          <div className="lg:col-span-7 bg-white rounded-[2.5rem] p-8 md:p-12 shadow-xl border border-gray-100">
+            <div className="mb-10">
+              <h3 className="text-2xl font-black text-gray-900 uppercase tracking-tight">Request Quotation</h3>
+              <p className="text-gray-400 text-xs font-bold uppercase tracking-widest mt-1">For custom or industrial projects</p>
+            </div>
+
+            <form action="https://formspree.io/f/xwvkqnob" method="POST" className="space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="space-y-1">
+                  <input type="text" name="name" required placeholder="Full Name" className="w-full bg-gray-50 border border-gray-100 rounded-2xl p-5 outline-none focus:border-[#1f7a1f] focus:bg-white transition-all text-gray-900" />
+                </div>
+                <div className="space-y-1">
+                  <input type="email" name="email" required placeholder="Email Address" className="w-full bg-gray-50 border border-gray-100 rounded-2xl p-5 outline-none focus:border-[#1f7a1f] focus:bg-white transition-all text-gray-900" />
+                </div>
               </div>
 
-              <select name="service" required className="w-full bg-gray-50 rounded-xl p-4 outline-none focus:ring-2 focus:ring-[#1f7a1f]">
-                <option>Deep Home Cleaning</option>
-                <option>Office Sanitization</option>
-                <option>Landscaping & Lawns</option>
-                <option>Gutter & Drainage</option>
-              </select>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <select name="service" required className="w-full bg-gray-50 border border-gray-100 rounded-2xl p-5 outline-none focus:border-[#1f7a1f] focus:bg-white transition-all text-gray-900 appearance-none font-medium">
+                  <option>Deep Home Cleaning</option>
+                  <option>Industrial Office Cleanup</option>
+                  <option>Landscaping & Lawn Care</option>
+                  <option>Gutter & Drainage</option>
+                  <option>Post-Construction</option>
+                </select>
+                <input type="text" name="location" required placeholder="Location (e.g. Rayfield)" className="w-full bg-gray-50 border border-gray-100 rounded-2xl p-5 outline-none focus:border-[#1f7a1f] focus:bg-white transition-all text-gray-900" />
+              </div>
 
-              <input type="text" name="location" required placeholder="Area in Jos (e.g. Rayfield)" className="w-full bg-gray-50 rounded-xl p-4 outline-none focus:ring-2 focus:ring-[#1f7a1f]" />
+              <textarea name="message" rows={4} placeholder="Describe the property size or specific needs..." className="w-full bg-gray-50 border border-gray-100 rounded-2xl p-5 outline-none focus:border-[#1f7a1f] focus:bg-white transition-all text-gray-900"></textarea>
 
-              <textarea name="message" rows={3} placeholder="Additional Details..." className="w-full bg-gray-50 rounded-xl p-4 outline-none focus:ring-2 focus:ring-[#1f7a1f]"></textarea>
-
-              <button type="submit" className="w-full bg-black text-white font-black py-4 rounded-xl hover:bg-[#1f7a1f] transition-all uppercase tracking-widest text-xs">
-                Submit Request
+              <button 
+                type="submit" 
+                className="w-full bg-[#1f7a1f] text-white font-black py-6 rounded-2xl hover:bg-black transition-all shadow-lg uppercase tracking-[0.3em] text-xs"
+              >
+                Send Request
               </button>
             </form>
           </div>
+
         </div>
       </div>
     </main>
