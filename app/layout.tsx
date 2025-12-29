@@ -12,50 +12,49 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className="scroll-smooth">
       <body className="antialiased font-sans bg-white text-gray-900">
         
-        {/* --- FIXED NAVIGATION BAR --- */}
-        <nav className="fixed top-0 w-full z-[100] bg-white border-b border-gray-100 shadow-md">
+        {/* --- MOBILE & DESKTOP NAV BAR --- */}
+        <nav className="fixed top-0 w-full z-[100] bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm">
           <div className="max-w-7xl mx-auto px-4 md:px-8 h-20 flex items-center justify-between">
             
-            {/* Logo Area - Now Solid Green */}
-            <Link href="/" className="flex items-center gap-2">
-              <div className="w-10 h-10 bg-[#1f7a1f] rounded-lg flex items-center justify-center shadow-lg">
-                <span className="text-white font-black italic text-xl">L</span>
+            {/* Logo Area */}
+            <Link href="/" className="flex items-center gap-2 group">
+              <div className="w-10 h-10 bg-[#1f7a1f] rounded-full flex items-center justify-center border-2 border-white shadow-md group-hover:rotate-12 transition-transform">
+                <span className="text-white font-bold italic text-xl">L</span>
               </div>
               <div className="flex flex-col">
-                <span className="font-black text-xl tracking-tighter leading-none text-[#1f7a1f]">LARRY</span>
+                <span className="font-black text-lg tracking-tighter leading-none">LARRY</span>
                 <span className="text-[10px] font-bold text-[#c9a227] uppercase tracking-[0.2em]">Cleaning</span>
               </div>
             </Link>
 
-            {/* Desktop Menu - Visible on Laptops */}
+            {/* Navigation Links - Hidden on very small screens, shown on tablets up */}
             <div className="hidden md:flex items-center gap-8">
-              <Link href="/" className="text-xs font-black text-gray-900 hover:text-[#1f7a1f] uppercase tracking-widest transition">Home</Link>
-              <Link href="/services" className="text-xs font-black text-gray-900 hover:text-[#1f7a1f] uppercase tracking-widest transition">Services</Link>
-              <Link href="/about" className="text-xs font-black text-gray-900 hover:text-[#1f7a1f] uppercase tracking-widest transition">About Us</Link>
+              <Link href="/" className="text-xs font-black hover:text-[#1f7a1f] uppercase tracking-widest transition">Home</Link>
+              <Link href="/about" className="text-xs font-black hover:text-[#1f7a1f] uppercase tracking-widest transition">About</Link>
+              <Link href="/services" className="text-xs font-black hover:text-[#1f7a1f] uppercase tracking-widest transition">Services</Link>
             </div>
 
-            {/* Action Buttons */}
-            <div className="flex items-center gap-3">
-              <Link href="/booking" className="bg-[#1f7a1f] text-white px-5 py-3 rounded-xl text-[10px] font-black hover:bg-black transition-all shadow-lg uppercase tracking-widest">
-                Book Now
-              </Link>
-            </div>
+            {/* Action Button */}
+            <Link href="/booking" className="bg-[#1f7a1f] text-white px-6 py-3 rounded-full text-[10px] font-black hover:bg-black transition-all shadow-lg uppercase tracking-widest active:scale-95">
+              Book Now
+            </Link>
           </div>
         </nav>
 
-        {/* Content with proper padding for the fixed Nav */}
-        <div className="min-h-screen pt-24">
+        {/* Content with padding-top so the nav doesn't cover it */}
+        <div className="min-h-screen pt-20">
           {children}
         </div>
 
-        <footer className="bg-gray-950 text-white py-12 px-6 text-center">
-           <p className="text-[#1f7a1f] font-black mb-2 tracking-widest uppercase text-xl">Larry Cleaning</p>
-           <div className="flex justify-center gap-6 text-[10px] text-gray-400 uppercase tracking-widest font-bold mt-4">
-             <Link href="/">Home</Link>
+        {/* Global Footer */}
+        <footer className="bg-gray-950 text-white py-12 px-6 text-center border-t-4 border-[#c9a227]">
+           <p className="text-[#c9a227] font-bold mb-2 tracking-widest uppercase">Larry Cleaning Service</p>
+           <p className="text-gray-500 text-xs mb-6">Premium Sanitation for the Plateau.</p>
+           <div className="flex justify-center gap-8 text-[10px] text-gray-400 uppercase tracking-[0.3em]">
+             <Link href="/about">About</Link>
              <Link href="/services">Services</Link>
-             <Link href="/booking">Book Now</Link>
+             <Link href="/booking">Payment</Link>
            </div>
-           <p className="text-gray-600 text-[10px] mt-8">© 2025 Larry Cleaning Service Jos. All Rights Reserved.</p>
         </footer>
       </body>
     </html>
